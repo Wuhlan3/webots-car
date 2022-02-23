@@ -1,0 +1,13 @@
+#VRML_OBJ R2021a utf8
+Lidar {
+  translation 0 0 0.08
+  children [
+    Shape {
+      appearance CorrugatedMetal {
+      }
+      geometry Box {
+        size 0.05 0.05 0.08
+      }
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+#VRML_OBJ R2021a utf8
+Robot {
+  translation 0 0 0.05
+  children [
+    DEF rightback HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0.1 0.11 0
+      }
+      device [
+        DEF motor4 RotationalMotor {
+          name "motor4"
+        }
+      ]
+      endPoint Solid {
+        translation 0.1 0.11 0
+        children [
+          DEF wheel Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.6 0.6 1
+              }
+            }
+            geometry Cylinder {
+              height 0.05
+              radius 0.05
+            }
+          }
+        ]
+        boundingObject USE wheel
+        physics Physics {
+        }
+      }
+    }
+    DEF rightfront HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor -0.1 0.11 0
+      }
+      device [
+        DEF motor1 RotationalMotor {
+          name "motor1"
+        }
+      ]
+      endPoint Solid {
+        translation -0.1 0.11 0
+        children [
+          DEF wheel Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.6 0.6 1
+              }
+            }
+            geometry Cylinder {
+              height 0.05
+              radius 0.05
+            }
+          }
+        ]
+        boundingObject USE wheel
+        physics Physics {
+        }
+      }
+    }
+    DEF leftfront HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor -0.1 -0.11 0
+      }
+      device [
+        DEF motor2 RotationalMotor {
+          name "motor2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.1 -0.11 0
+        children [
+          DEF wheel Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.6 0.6 1
+              }
+            }
+            geometry Cylinder {
+              height 0.05
+              radius 0.05
+            }
+          }
+        ]
+        boundingObject USE wheel
+        physics Physics {
+        }
+      }
+    }
+    DEF leftback HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 1 0
+        anchor 0.1 -0.11 0
+      }
+      device [
+        DEF motor3 RotationalMotor {
+          name "motor3"
+        }
+      ]
+      endPoint Solid {
+        translation 0.1 -0.11 0
+        children [
+          DEF wheel Shape {
+            appearance Appearance {
+              material Material {
+                diffuseColor 0.6 0.6 1
+              }
+            }
+            geometry Cylinder {
+              height 0.05
+              radius 0.05
+            }
+          }
+        ]
+        boundingObject USE wheel
+        physics Physics {
+        }
+      }
+    }
+    DEF body Shape {
+      geometry Box {
+        size 0.3 0.16 0.08
+      }
+    }
+  ]
+  boundingObject USE body
+  physics Physics {
+  }
+  controller "main"
+}
